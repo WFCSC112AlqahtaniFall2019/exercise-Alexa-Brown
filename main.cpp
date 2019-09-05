@@ -3,17 +3,18 @@ using namespace std;
 
 int main() {
     const int NUM_ELEMENTS = 8;   // Number of elements
-    int revVctr[8];               // User values
+    int revVctr[8];// User values
     int i;                        // Loop index
+    int temp = 0;           //temp variable
 
-    cout << "Enter " << NUM_ELEMENTS << " integer values..." << endl;
+    cout << "Enter " << NUM_ELEMENTS << " integer values separately, pressing enter after each one..." << endl;
     for (i = 0; i < NUM_ELEMENTS; ++i) {
         cin >> revVctr[i];
     }
-
-    // Reverse
-    for (i = 0; i < NUM_ELEMENTS; ++i) {
-        revVctr[i] = revVctr[NUM_ELEMENTS - i]; // Swap
+    for (i=0; i < (NUM_ELEMENTS/2)  ; ++i){
+        temp = revVctr[i];
+        revVctr[i] = revVctr[(NUM_ELEMENTS - i )-1 ];
+        revVctr[NUM_ELEMENTS-i -1 ] = temp;
     }
 
     // Print values
